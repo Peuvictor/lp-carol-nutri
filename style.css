@@ -259,3 +259,52 @@ footer {
     flex: 1;
     min-width: 300px;
 }
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap; /* Faz a foto ir para baixo no celular automaticamente */
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left; /* Alinhamento à esquerda fica mais moderno com foto ao lado */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%; /* Ela vai respeitar o tamanho do container pai */
+    max-width: 500px; /* Impede que ela fique gigante em telas muito largas */
+    height: auto;
+    border-radius: 20px;
+    /* Efeito de carregamento suave */
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste rápido para Mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        text-align: center;
+        flex-direction: column-reverse; /* Foto em cima ou embaixo do texto no mobile */
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-image img {
+        max-width: 80%;
+        box-shadow: 10px 10px 0px var(--cor-detalhe);
+    }
+}
