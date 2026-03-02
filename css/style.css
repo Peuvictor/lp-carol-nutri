@@ -392,3 +392,78 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
+/* =========================
+   RESULTADOS PREMIUM
+========================= */
+
+.results {
+    padding: 120px 0;
+    background: var(--branco);
+}
+
+.results h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.results-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.results-carousel {
+    display: flex;
+    gap: 30px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.result-card {
+    min-width: 320px;
+    background: var(--cor-fundo);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    transition: 0.4s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.result-card img {
+    width: 100%;
+    display: block;
+}
+
+.result-info {
+    padding: 25px;
+}
+
+.result-info p {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.result-info span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--cor-principal-dark);
+    padding: 10px;
+}
+
+.results-disclaimer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}

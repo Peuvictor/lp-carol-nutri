@@ -104,6 +104,52 @@
     </div>
 </section>
 
+<!-- RESULTADOS -->
+<section class="results">
+  <div class="container">
+    <h2 class="fade-up">Transformações acompanhadas.</h2>
+
+    <div class="results-wrapper fade-up">
+      <button class="carousel-btn prev">&#10094;</button>
+
+      <div class="results-carousel">
+
+        <div class="result-card">
+          <img src="assets/resultado1.webp" alt="Transformação paciente">
+          <div class="result-info">
+            <p><strong>–8kg</strong> em 5 meses.</p>
+            <span>Constância e estratégia metabólica aplicada.</span>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <img src="assets/resultado2.webp" alt="Transformação paciente">
+          <div class="result-info">
+            <p><strong>Redução de inflamação</strong></p>
+            <span>Melhora hormonal e composição corporal.</span>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <img src="assets/resultado3.webp" alt="Transformação paciente">
+          <div class="result-info">
+            <p><strong>–6kg</strong> com equilíbrio metabólico.</p>
+            <span>Sem restrição extrema.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+
+    <p class="results-disclaimer">
+      *Resultados variam de acordo com adesão individual.
+    </p>
+
+  </div>
+</section>
+
 <!-- SOBRE -->
 <section id="sobre" class="about">
     <div class="container narrow fade-up">
@@ -206,6 +252,19 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 elements.forEach(el => observer.observe(el));
+</script>
+<script>
+const carousel = document.querySelector('.results-carousel');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+nextBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: 350, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -350, behavior: 'smooth' });
+});
 </script>
 
 </body>
