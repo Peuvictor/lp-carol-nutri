@@ -342,3 +342,53 @@ footer {
         padding: 90px 8%;
     }
 }
+/* =========================
+   MICRO ANIMAÇÕES PREMIUM
+========================= */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity 0.9s cubic-bezier(.19,1,.22,1),
+        transform 0.9s cubic-bezier(.19,1,.22,1);
+    will-change: opacity, transform;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay progressivo automático para grids */
+.method-grid .card:nth-child(1) { transition-delay: 0.1s; }
+.method-grid .card:nth-child(2) { transition-delay: 0.2s; }
+.method-grid .card:nth-child(3) { transition-delay: 0.3s; }
+.method-grid .card:nth-child(4) { transition-delay: 0.4s; }
+.method-grid .card:nth-child(5) { transition-delay: 0.5s; }
+
+/* Hover refinado nos cards */
+.card {
+    transition:
+        transform 0.35s cubic-bezier(.19,1,.22,1),
+        box-shadow 0.35s cubic-bezier(.19,1,.22,1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* Botões com micro movimento mais suave */
+.btn-agendar,
+.btn-agendar-top {
+    transition:
+        transform 0.35s cubic-bezier(.19,1,.22,1),
+        box-shadow 0.35s cubic-bezier(.19,1,.22,1);
+}
+
+.btn-agendar:hover,
+.btn-agendar-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
