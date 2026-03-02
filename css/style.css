@@ -1,309 +1,318 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 
+/* =========================
+   VARIÁVEIS
+========================= */
 :root {
-    --cor-fundo: #F7EBDF;
-    --cor-detalhe: #EAD3C1;
-    --cor-principal: #99665F;
-    --cor-texto: #4A3B39;
+    --cor-fundo: #F7EFE8;
+    --cor-detalhe: #E8D5C4;
+    --cor-principal: #8C5E56;
+    --cor-principal-dark: #6F4741;
+    --cor-texto: #3A2F2D;
     --branco: #ffffff;
 }
 
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     background-color: var(--cor-fundo);
-    padding-top: 80px; /* Espaço para o menu fixo não cobrir o conteúdo */
+    color: var(--cor-texto);
+    padding-top: 90px;
+    line-height: 1.6;
 }
+
+/* =========================
+   HEADER
+========================= */
 header {
-    width: 100%;
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
+    background: var(--branco);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
     z-index: 1000;
-    background-color: var(--cor-detalhe); /* Cor fixa do menu */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.container {
+.navbar {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 5%; /* Mais espaço em cima/baixo para separar as seções */
-}
-
-.logo {
+    padding: 18px 5%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo img {
-    height: 50px; /* Ajuste este valor conforme o formato da sua logo */
-    width: auto;  /* Mantém a proporção largura/altura */
-    display: block;
+    height: 48px;
 }
 
-.logo img:hover {
-    transform: scale(1.05); /* Efeito sutil ao passar o mouse */
-}
-
-/* Ajuste opcional: se a logo for muito alta, aumente o padding do navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    /* Centralização e Respiro */
-    max-width: 1200px;    /* Impede que o menu espalhe demais em telas gigantes */
-    margin: 0 auto;       /* Centraliza o bloco na tela */
-    padding: 15px 5%;     /* 15px em cima/baixo e 5% de respiro nas laterais */
-
-    width: 100%;          /* Garante que ocupe a largura disponível */
-}
-
-.logo span {
-    font-weight: 300;
-    color: var(--cor-texto);
-}
-
-/* Links horizontais */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
 }
+.about.light {
+    background-color: #ffffff;
+}
 
 .nav-links a {
     text-decoration: none;
-    color: var(--cor-texto);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 0.95rem;
+    color: var(--cor-texto);
     transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--cor-principal);
 }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-/* Botão de destaque no menu (Opcional) */
-.btn-agendar {
-    background: linear-gradient(135deg, #99665F, #7a4f49);
-    color: white;
-    padding: 14px 35px;
+.container.narrow {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container.narrow p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn-agendar,
+.btn-agendar-top {
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-dark));
+    color: var(--branco);
+    padding: 14px 32px;
     border-radius: 50px;
     font-weight: 600;
     letter-spacing: 0.5px;
-}
-
-.btn-agendar-top:hover {
-    filter: brightness(1.1);
-}
-
-.btn-agendar {
-    background-color: var(--cor-principal);
-    color: var(--branco);
-    padding: 12px 30px;
-    border: none;
-    border-radius: 50px; /* Arredondado passa mais suavidade */
-    font-weight: bold;
-    cursor: pointer;
+    text-decoration: none;
     transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.btn-agendar:hover {
-    filter: brightness(1.2); /* Brilha um pouco ao passar o mouse */
-    transform: scale(1.05);
+.btn-agendar-top {
+    padding: 8px 22px;
 }
 
+.btn-agendar:hover,
+.btn-agendar-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: var(--cor-fundo);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: var(--cor-principal-dark);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 480px;
+}
+
+.hero-image img {
+    max-width: 480px;
+    border-radius: 25px;
+    box-shadow: 20px 20px 0px var(--cor-detalhe);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+section {
+    padding: 100px 5%;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--cor-principal-dark);
+}
+
+/* =========================
+   CARDS MÉTODO
+========================= */
+.method-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--branco);
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--cor-principal);
+}
+
+/* =========================
+   FAQ
+========================= */
+.faq details {
+    max-width: 800px;
+    margin: 15px auto;
+    background: var(--branco);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+
+.faq summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* =========================
+   CTA FINAL
+========================= */
+.cta-final {
+    background: var(--cor-principal);
+    color: var(--branco);
+    text-align: center;
+}
+
+.cta-final h2 {
+    color: var(--branco);
+}
+
+.cta-final p {
+    margin-bottom: 30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #2B2221;
+    color: var(--branco);
+    text-align: center;
+    padding: 40px 5%;
+}
+
+/* =========================
+   BOTÕES FLUTUANTES
+========================= */
 .floating-btns {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     z-index: 1000;
 }
 
 .btn-float {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    font-size: 22px;
     text-decoration: none;
-    font-size: 24px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: 0.3s;
 }
 
-.whatsapp { background-color: #25d366; }
-.instagram { background-color: #e4405f; }
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Coloca a logo em cima e os links embaixo */
-        gap: 10px;
-    }
-    .nav-links {
-        gap: 10px;
-        font-size: 0.8rem; /* Diminui o texto para caber em uma linha só */
-    }
-    .logo img {
-        height: 40px;
-    }
-}
-/* --- 2. BANNER PRINCIPAL (HERO) --- */
-.hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--cor-fundo);
+.btn-float:hover {
+    transform: scale(1.1);
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: var(--cor-principal);
-    margin-bottom: 20px;
-    line-height: 1.2;
+.whatsapp {
+    background-color: #25d366;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.instagram {
+    background: linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
 }
 
-/* --- 3. SOBRE MIM --- */
-.about {
-    background-color: var(--branco);
-}
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 900px) {
 
-.about h2 {
-    color: var(--cor-principal);
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-/* --- 4. MÉTODO (CARDS) --- */
-.method {
-    background-color: var(--cor-fundo);
-}
-
-.method h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--cor-principal);
-}
-
-.method-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background-color: var(--branco);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-bottom: 4px solid var(--cor-detalhe);
-}
-
-/* --- 6. FAQ (ACORDEON) --- */
-.faq {
-    background-color: var(--branco);
-}
-
-.faq h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--cor-principal);
-}
-
-details {
-    background-color: var(--cor-fundo);
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-summary {
-    font-weight: 600;
-    color: var(--cor-texto);
-}
-
-/* --- 7. FOOTER --- */
-footer {
-    background-color: var(--cor-texto);
-    color: var(--cor-fundo);
-    text-align: center;
-    padding: 40px 0;
-}
-/* Adicione isso logo abaixo do seu .about no CSS */
-.about-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: center;
-}
-
-.about-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    flex-wrap: wrap; /* Faz a foto ir para baixo no celular automaticamente */
-}
-
-.hero-content {
-    flex: 1;
-    min-width: 300px;
-    text-align: left; /* Alinhamento à esquerda fica mais moderno com foto ao lado */
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    width: 100%; /* Ela vai respeitar o tamanho do container pai */
-    max-width: 500px; /* Impede que ela fique gigante em telas muito largas */
-    height: auto;
-    border-radius: 20px;
-    /* Efeito de carregamento suave */
-    animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Ajuste rápido para Mobile */
-@media (max-width: 768px) {
     .hero-container {
-        text-align: center;
-        flex-direction: column-reverse; /* Foto em cima ou embaixo do texto no mobile */
-    }
-    .hero-content {
+        flex-direction: column-reverse;
         text-align: center;
     }
+
+    .hero p {
+        margin: 0 auto 30px;
+    }
+
     .hero-image img {
         max-width: 80%;
-        box-shadow: 10px 10px 0px var(--cor-detalhe);
+        box-shadow: 15px 15px 0px var(--cor-detalhe);
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 0.85rem;
     }
 }
