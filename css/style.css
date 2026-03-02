@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
     --cor-fundo: #F7EBDF;
@@ -89,14 +89,13 @@ header {
 }
 
 /* Botão de destaque no menu (Opcional) */
-.btn-agendar-top {
-    background-color: var(--cor-principal);
-    color: var(--branco);
-    padding: 8px 20px;
-    border-radius: 20px;
-    text-decoration: none;
+.btn-agendar {
+    background: linear-gradient(135deg, #99665F, #7a4f49);
+    color: white;
+    padding: 14px 35px;
+    border-radius: 50px;
     font-weight: 600;
-    transition: 0.3s;
+    letter-spacing: 0.5px;
 }
 
 .btn-agendar-top:hover {
