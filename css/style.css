@@ -24,12 +24,30 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    padding-top: 90px;
-    line-height: 1.6;
+    line-height: 1.7;
+    padding-top: 95px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.container.narrow {
+    max-width: 720px;
+    text-align: center;
 }
 
 /* =========================
@@ -39,9 +57,8 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
     background: var(--branco);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
     z-index: 1000;
 }
 
@@ -55,16 +72,14 @@ header {
 }
 
 .logo img {
-    height: 48px;
+    height: 45px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
-}
-.about.light {
-    background-color: #ffffff;
+    align-items: center;
+    gap: 28px;
 }
 
 .nav-links a {
@@ -72,26 +87,11 @@ header {
     font-weight: 500;
     font-size: 0.95rem;
     color: var(--cor-texto);
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--cor-principal);
-}
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.container.narrow {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.container.narrow p {
-    font-size: 1.05rem;
-    line-height: 1.8;
 }
 
 /* =========================
@@ -104,20 +104,21 @@ header {
     padding: 14px 32px;
     border-radius: 50px;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
     text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .btn-agendar-top {
-    padding: 8px 22px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
 }
 
 .btn-agendar:hover,
 .btn-agendar-top:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
 
 /* =========================
@@ -127,17 +128,14 @@ header {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    background: var(--cor-fundo);
 }
 
 .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 70px;
+    padding: 120px 5% 80px;
 }
 
 .hero-content {
@@ -147,28 +145,28 @@ header {
 .hero h1 {
     font-size: 3.2rem;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: 25px;
     color: var(--cor-principal-dark);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-bottom: 40px;
     max-width: 480px;
 }
 
 .hero-image img {
-    max-width: 480px;
+    max-width: 460px;
     border-radius: 25px;
-    box-shadow: 20px 20px 0px var(--cor-detalhe);
+    box-shadow: 25px 25px 0 var(--cor-detalhe);
 }
 
 /* =========================
    SEÇÕES
 ========================= */
 section {
-    padding: 100px 5%;
+    padding: 110px 0;
 }
 
 section h2 {
@@ -177,6 +175,10 @@ section h2 {
     margin-bottom: 40px;
     text-align: center;
     color: var(--cor-principal-dark);
+}
+
+.about.light {
+    background: var(--branco);
 }
 
 /* =========================
@@ -192,16 +194,16 @@ section h2 {
 
 .card {
     background: var(--branco);
-    padding: 35px;
+    padding: 40px;
     border-radius: 18px;
     text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+    transition: 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
 .card h3 {
@@ -213,12 +215,12 @@ section h2 {
    FAQ
 ========================= */
 .faq details {
-    max-width: 800px;
+    max-width: 750px;
     margin: 15px auto;
     background: var(--branco);
-    padding: 20px 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    padding: 22px 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
 .faq summary {
@@ -233,10 +235,12 @@ section h2 {
     background: var(--cor-principal);
     color: var(--branco);
     text-align: center;
+    padding: 110px 5%;
 }
 
 .cta-final h2 {
     color: var(--branco);
+    margin-bottom: 20px;
 }
 
 .cta-final p {
@@ -251,6 +255,7 @@ footer {
     color: var(--branco);
     text-align: center;
     padding: 40px 5%;
+    font-size: 0.9rem;
 }
 
 /* =========================
@@ -293,13 +298,35 @@ footer {
 }
 
 /* =========================
-   RESPONSIVO
+   RESPONSIVO PREMIUM
 ========================= */
 @media (max-width: 900px) {
+
+    body {
+        padding-top: 110px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
+        gap: 40px;
+        padding: 100px 8% 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
     }
 
     .hero p {
@@ -308,11 +335,10 @@ footer {
 
     .hero-image img {
         max-width: 80%;
-        box-shadow: 15px 15px 0px var(--cor-detalhe);
+        box-shadow: 18px 18px 0 var(--cor-detalhe);
     }
 
-    .nav-links {
-        gap: 15px;
-        font-size: 0.85rem;
+    section {
+        padding: 90px 8%;
     }
 }
