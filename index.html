@@ -10,11 +10,24 @@
     <meta name="author" content="Ana Carolina Guimarães">
     <meta name="robots" content="index, follow">
 
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lp-carol-nutri.vercel.app/">
+    <meta property="og:title" content="Método NTM® | Emagrecimento Estratégico">
+    <meta property="og:description" content="Nutrição funcional e estratégia metabólica com Carol Guimarães em Belo Horizonte.">
+    <meta property="og:image" content="https://lp-carol-nutri.vercel.app/assets/banner-og.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://lp-carol-nutri.vercel.app/">
+    <meta name="twitter:title" content="Método NTM® | Emagrecimento Estratégico">
+    <meta name="twitter:description" content="Nutrição funcional e estratégia metabólica com Carol Guimarães em Belo Horizonte.">
+    <meta name="twitter:image" content="https://lp-carol-nutri.vercel.app/assets/banner-og.jpg">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <header>
@@ -22,6 +35,13 @@
     <a href="#home" class="logo">
         <img src="assets/logo-principal.png" alt="Logotipo Método NTM">
     </a>
+
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
     <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#metodo">Método</a></li>
@@ -246,7 +266,7 @@
 </div>
 
 <script>
-// SCRIPT 1: ANIMAÇÃO DE FADE-UP (MANTIDO E CORRIGIDO PARA NÃO SUMIR COM A PÁGINA)
+// SCRIPT 1: ANIMAÇÃO DE FADE-UP
 const elements = document.querySelectorAll('.fade-up');
 
 const observer = new IntersectionObserver(entries => {
@@ -266,7 +286,7 @@ const prevBtn = document.querySelector('.prev');
 
 nextBtn.addEventListener('click', () => {
   const cardWidth = carousel.querySelector('.result-card').offsetWidth;
-  const gap = 30; // Correspondente ao gap no CSS
+  const gap = 30;
   carousel.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
 });
 
@@ -275,6 +295,20 @@ prevBtn.addEventListener('click', () => {
   const gap = 30;
   carousel.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
 });
+
+// SCRIPT 3: MENU HAMBÚRGUER MOBILE (ADICIONADO AQUI)
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
 </script>
 
 </body>

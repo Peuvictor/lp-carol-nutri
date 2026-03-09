@@ -26,7 +26,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* Evita que o menu fixo cubra os títulos das seções ao clicar nos links */
     scroll-padding-top: 110px;
 }
 
@@ -76,6 +75,22 @@ header {
 
 .logo img {
     height: 45px;
+}
+
+/* Menu Hambúrguer (Escondido no Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-principal-dark);
+    transition: all 0.3s ease;
 }
 
 .nav-links {
@@ -253,12 +268,12 @@ section h2 {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 20px 0;
-    -ms-overflow-style: none;  /* IE e Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .results-carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari e Opera */
+    display: none;
 }
 
 .result-card {
@@ -276,7 +291,6 @@ section h2 {
     box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
 
-/* CÓDIGO RESTAURADO AQUI */
 .result-card img {
     width: 100%;
     display: block;
@@ -408,8 +422,101 @@ footer {
     transform: translateY(0);
 }
 
-/* Delay progressivo automático para grids */
 .method-grid .card:nth-child(1) { transition-delay: 0.1s; }
 .method-grid .card:nth-child(2) { transition-delay: 0.2s; }
 .method-grid .card:nth-child(3) { transition-delay: 0.3s; }
-.method-grid .card:nth-child(4) { transition-
+.method-grid .card:nth-child(4) { transition-delay: 0.4s; }
+.method-grid .card:nth-child(5) { transition-delay: 0.5s; }
+
+/* =========================
+   RESPONSIVO E MOBILE (FUNDAMENTAL)
+========================= */
+@media (max-width: 900px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    /* Ativa o botão hambúrguer na tela pequena */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Esconde a barra de navegação tradicional e prepara para deslizar */
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: var(--branco);
+        width: 70%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        justify-content: center;
+        gap: 40px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    /* Resolve o Hero esmagado */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5% 40px;
+        gap: 30px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-brand {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-headline {
+        font-size: 1.6rem;
+    }
+
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 90%;
+        max-width: 320px;
+        box-shadow: 15px 15px 0 var(--cor-detalhe);
+    }
+
+    section { padding: 80px 5%; }
+}
+
+@media (max-width: 768px) {
+    /* Ocultar as setas gigantes que esmagam o carrossel no mobile */
+    .carousel-btn {
+        display: none !important;
+    }
+
+    .results-carousel {
+        padding: 15px 5%;
+    }
+}
