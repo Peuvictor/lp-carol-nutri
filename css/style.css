@@ -509,14 +509,38 @@ footer {
 
     section { padding: 80px 5%; }
 }
-
 @media (max-width: 768px) {
-    /* Ocultar as setas gigantes que esmagam o carrossel no mobile */
-    .carousel-btn {
-        display: none !important;
+
+    /* Altera o alinhamento de row para column, empilhando os elementos */
+    .hero-container {
+        flex-direction: column-reverse; /* Coloca o texto ACIMA da imagem no mobile */
+        text-align: center;
+        gap: 40px; /* Reduz o espaço entre texto e imagem no mobile */
+        padding: 60px 5% 40px; /* Ajusta os paddings para a visualização vertical */
     }
 
-    .results-carousel {
-        padding: 15px 5%;
+    /* Garante que o contêiner do texto ocupe toda a largura */
+    .hero-content {
+        width: 100%;
+    }
+
+    /* Reduz o tamanho do título principal para caber em telas pequenas */
+    .hero-headline {
+        font-size: 1.6rem;
+    }
+
+    /* Ajusta o contêiner da imagem no mobile */
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Garante que a imagem se ajuste responsivamente e mantenha a proporção */
+    .hero-image img {
+        width: 90%; /* Ocupa a maior parte da largura da tela */
+        max-width: 320px; /* Impede que fique gigantesca em tablets grandes */
+        height: auto; /* MÁGICA: Mantém a proporção exata impedindo achatamento */
+        box-shadow: 18px 18px 0 var(--cor-detalhe); /* Ajuste leve na sombra */
     }
 }
